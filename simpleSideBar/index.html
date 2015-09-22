@@ -1,209 +1,72 @@
-<?php error_reporting(0);?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <title>Brevillel NPI</title>
-	
-		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" >
-		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-		
-		
-		<!-- Latest compiled and minified JavaScript -->
-		<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-		
-		<!-- for Table -->
-		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-		<script type="text/javascript" src="tableSorter/jquery.tablesorter.js"></script> 
-		<script src="tableSorter/jquery.tablesorter.widgets.js"></script>
-		<link rel="stylesheet" href="tableSorter/themes/blue/style.css">	
+    <title>Simple Sidebar - Start Bootstrap Template</title>
 
-		<!-- sidebar -->
-		 <link href="css/simple-sidebar.css" rel="stylesheet">
-		 
-		
-		<!-- To resize based on screen size -->
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">		
-			
-		<!-- for js Tree -->
-		<link rel="stylesheet" href="jsTree/dist/themes/default/style.min.css" />
-		<script src="jsTree/dist/jstree.min.js"></script>		
-			
-<style>	
-		.prcNoAction{
-			background-color: red;
-			text-align: center;
-		}
-		
-		.prcPending{
-			background-color: #FFCE85;
-			text-align: center;
-		}
-		
-		.brevillePending{
-			background-color: #BC9CFF;
-			font-weight: bold;
-			text-align: center;
-		}
-		
-		.completed{
-			background-color: #ACC875;
-			text-align: center;
-		}
-		
-		.neutralCell{
-			background-color: white;
-			font-weight: bold;
-			font-size: 120%;
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-		}
-		
-		.modalWindowIcon{
-			max-height: 65px;
-		}
-					
-		th { text-align: center;}
-		
-		table.tablesorter { background-color: #D0DAE0; }
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
 
-</style>
-<style>
-/* REQUIRED in CUSTOM THEMES!
- This is the only definition that MUST BE added to any custom themes.
- This is how rows are hidden by filtering (included in provided themes) */
-.tablesorter .filtered {
-  display: none;
-}
-
-</style>
-
-
-<script>
-
-$(document).ready(function() { 
-        $("#myTable").tablesorter({
-
-		theme: 'blue',
-		widthFixed : true,
-		widgets: ['filter', 'group'],
-		ignoreCase: false,
-
-		    widgetOptions : {
-
-		      filter_childRows : false,
-		      filter_childByColumn : false,
-			  filter_hideFilters : true,
-			  filter_cssFilter : "tablesorter-filter"
-		    }
-		       	
-		}); 
-		
-}); // end of documentReady function
-
-$(document).ready(function() { 
-   $("#treeData").jstree({
-		"plugins": ["checkbox"]
-	
-	}); 
-});
-
-		
-
-
-</script>
-	
 </head>
 
-<body style="background-color:#F9F8F6 ;">
-    <div id="wrapper" class="toggled" >
+<body>
+
+    <div id="wrapper">
 
         <!-- Sidebar -->
-        <div id="sidebar-wrapper" style="background-color:black;">		
-            <div style="color:white;"> <!--class =  sidebar- nav (?)-->
-				<div class="text-center">
-					<h2>Pick Columns:</h2>
-					<hr>
-						<a class="btn btn-default btn-sm" href="#"> Summary View </a>	
-						<a class="btn btn-default btn-sm" href="#"> Detailed View   </a> 
-						<br><br>
-				</div>
-			
-				<div id="treeData" >
-					<ul>
-						<li data-jstree='{ "opened" : true }'>Work Instruction
-							<ul >
-								<li>Draft </li>
-								<li>To be approved  </li>
-								<li>Approved </li>
-							</ul>
-						</li>
-						
-						<li data-jstree='{ "opened" : true }'>ETL Certification
-							<ul>
-								<li>Section General </li>
-								<li>Report Section </li>
-								<li>Testing Section </li>
-							</ul>
-						</li data-jstree='{ "opened" : true }'>
-						
-						<li data-jstree='{ "opened" : true }'>Art Work
-							<ul>
-								<li>ETL Label Design </li>
-								<li>Litho on FTP </li>
-								<li>Litho Draft </li>
-							</ul>
-						</li>	
-						<li data-jstree='{ "opened" : true }'>Packaging
-							<ul>
-								<li>Sample Received</li>
-								<li>Drop Test Passed </li>
-								<li>Drop Test Reviewed </li>
-								<li>Part Names Created </li>
-							</ul>
-						</li>
-						<li data-jstree='{ "opened" : true }'>FAR
-							<ul>
-								<li>Draft Criteria </li>
-								<li>Criteria Finalized </li>
-								<li>Report Completed </li>
-							</ul>
-						</li>
-						<li data-jstree='{ "opened" : true }'>TRACS
-							<ul>
-								<li>Draft Criteria </li>
-								<li>Criteria Finalized </li>
-								<li>Verified and Translated </li>
-							</ul>
-						</li>
-
-
-
-						
-					</ul>
-				</div>
-            </div>
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Start Bootstrap
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Dashboard</a>
+                </li>
+                <li>
+                    <a href="#">Shortcuts</a>
+                </li>
+                <li>
+                    <a href="#">Overview</a>
+                </li>
+                <li>
+                    <a href="#">Events</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
         </div>
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
         <div id="page-content-wrapper">
-         <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-
-				<!-- BUTTONS: Expand and help -->
-				<button type="button" class="btn btn-info btn-xs pull-right" data-toggle="modal" data-target="#info" aria-label="Left Align"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Help </button>
-				
-				<a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><span class="glyphicon glyphicon glyphicon-tasks" aria-hidden="true"></span> Expand </a>		
-				<!-- end of buttons -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- BUTTONS -->
+		<button type="button" class="btn btn-info btn-xs pull-right" data-toggle="modal" data-target="#info" aria-label="Left Align"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> </button>
 		
-				</div>
-			</div> <!-- end of row1 -->
-			
-		<!-- LEGEND Modal -->
+		<button type="button" class="btn btn-warning btn-large pull-left"><span class="glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span> </button>		
+		<!-- end of buttons -->
+		
+		<!-- Modal -->
 		<div class="modal fade" id="info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		  <div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -215,7 +78,7 @@ $(document).ready(function() {
 			  </div>	<!-- end of header -->	  
 			  
 			  <div class="modal-body">					  
-				<img style="text-align:center;" src="img/Legend.jpg" alt="Mountain View"> </img>
+				... disambiguation ...
 
 				
 				
@@ -230,27 +93,22 @@ $(document).ready(function() {
 			</div>
 		  </div>
 		</div>
-		<!-- end of LEGEND modal -->
+		<!-- end of Sample modal -->
 		
-		<hr>
 		
-		<!-- page data; table -->
-		<div class="col-sm-12" >
-		
-		<h2 style="text-align:left; font-family:Helvetica, Arial;"> Breville NPI Status </h2>
-		<table  id="myTable" class="tablesorter table table-striped table-bordered table-condensed hasFilters" role="grid">
+		<h2 style="text-align:center; font-family:Verdana, Geneva, sans-serif;"> Breville NPI Status </h2>
+		<table id="myTable" class="tablesorter table table-striped table-bordered table-condensed" >
 		<thead id="theadId">
-			<tr role="row" class="tablesorter-headerRow">
-				<th class="filter-select">SKU</th>
-				<th class="filter-match">Work Instruction </th>
+			<tr>
+				<th class="text-center">SKU</th>
+				<th>Work Instruction </th>
 				<th>ETL Certification </th>
 				<th>Art Work </th>
 				<th>Packaging </th>
-				<th >FAR </th>
-				<th >TRACS</th>
-				<th>PPI  </th>
+				<th class="text-center">FAR </th>
+				<th class="text-center">TRACS</th>
+				<th class="text-center">PPI  </th>
 			</tr>
-			
 		</thead>
 		
 		<tbody id="tbodyId">
@@ -342,11 +200,6 @@ $(document).ready(function() {
 		</tbody>		
 		</table>		
 		
-		
-		</div>
-		<!-- end of col-lg-12; table -->
-		
-		
 		<!-- LVL 3 MODAL WINDOW -->
 		<?php
 			// SKU detail, status and picture
@@ -375,7 +228,7 @@ $(document).ready(function() {
 			$comments = 'This is a sample comment';
 		?>
 		
-		<!-- LVL 3 Detail -->
+		<!-- Modal -->
 		<div class="modal fade" id="detailLvl3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		  <div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -453,45 +306,33 @@ $(document).ready(function() {
 			</div>
 		  </div>
 		</div>
-		<!-- end LVL 3 Detail modal -->
-		
-		<footer><hr>
-		
-		  <p style="text-align:left; font-family:Helvetica, Arial; "> © PRC Industries</p>
-		  
-		</footer>
+		<!-- end of Sample modal -->
 		
 		
-                        
-                    </div> <!-- end of  <div class="col-lg-12"> -->
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                    </div>
                 </div>
             </div>
-		
-		</div>     <!-- "container-fluid" -->
-		</div> <!-- "page-content-wrapper" -->
+        </div>
+        <!-- /#page-content-wrapper -->
 
-	
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
     <!-- Menu Toggle Script -->
     <script>
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
-	
-	$.jstree.defaults.core.themes.icons = false;
-	$('#treeData').jstree({
-		"plugins" : [ "checkbox" ]
-	
-	
-	});
-	
-	
-	
     </script>
 
-	
-	
-	
 </body>
 
 </html>
